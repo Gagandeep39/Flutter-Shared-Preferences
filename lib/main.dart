@@ -33,9 +33,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _fetchSharedPreferenceData() async {
     preferences = await SharedPreferences.getInstance();
-    int data = preferences.getInt('counter');
+    int _fetchedData = preferences.getInt('counter');
     setState(() {
-      if (data != null) _counter = data;
+      if (!_fetchedData.isNaN && _fetchedData != null) _counter = _fetchedData;
     });
   }
 
